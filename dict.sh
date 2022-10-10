@@ -1,16 +1,30 @@
-#!/bin/bash
+#!/bin/bash -x
 
-declare -A dict
-read -p " Enter the number " a
-read -p " Enter the number " b
-read -p " Enter the number " c
+# USE-CASE-1
+echo "Enter A Value : "
+read a 
+echo "Enter B Value : "
+read b
+echo "Enter C Value : "
+read c
 
-echo result1=$(($a+$b*$c))
-echo result2=$(($a*$b+$c))
-echo result3=$(($a%$b+$c))
-echo result4=$(($c+$a/$b))
+# USE-CASE-2
+p=$((a + b * c))
+echo $p
 
-dict[Result-1]= $result1
-dict[Result-2]= $result2
-dict[Result-3]= $result3
-dict[Result-4]= $result4
+# USE-CASE-3
+q=$((a * b + c))
+echo $q
+
+# USE-CASE-4
+r=$((c + a / b))
+echo $r
+
+# USE-CASE-5
+s=$((a % b + c))
+echo $s
+
+# USE-CASE-6
+declare  arr
+#arr["key1"]=$p
+arr+=( arr["key1"]=$p ["key2"]=$q ["key3"]=$s ["key4"]=$s )
